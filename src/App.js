@@ -23,7 +23,6 @@ export default class App extends Component {
     )
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         this.setState({
           randomResponse: res,
         });
@@ -40,17 +39,19 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div class="wrapper">
         <h1>Chuck Norris Jokes</h1>
         <form className="jokesForm" onSubmit={this.handleSubmit}>
           <label>Get a new joke</label>
           <input type="submit" value="Go!"></input>
         </form>
-        {this.state.randomResponse ? (
-          <p>{this.state.randomResponse.value}</p>
-        ) : (
-          <p>Make a search</p>
-        )}
+        <main>
+          {this.state.randomResponse ? (
+            <p>{this.state.randomResponse.value}</p>
+          ) : (
+            <p>Let's Go!</p>
+          )}
+        </main>
       </div>
     );
   }
