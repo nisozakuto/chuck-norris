@@ -9,6 +9,14 @@ export default class App extends Component {
     };
   }
 
+  componentDidMount() {
+    document.addEventListener("keydown", this.nextFunction, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.nextFunction, false);
+  }
+
   connectToChuck = () => {
     fetch(
       "https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random",
@@ -37,9 +45,16 @@ export default class App extends Component {
     this.connectToChuck();
   };
 
+  nextFunction = (event) => {
+    if (event.keyCode === 78) {
+      this.connectToChuck();
+    }
+  };
+
   render() {
     return (
-      <div class="wrapper">
+      <div className="wrapper">
+        <input />
         <h1>Chuck Norris Jokes</h1>
         <form className="jokesForm" onSubmit={this.handleSubmit}>
           <label>Get a new joke</label>
