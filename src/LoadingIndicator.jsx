@@ -7,6 +7,11 @@ const LdngIndicator = (props) => {
   return promiseInProgress && <Spinner />;
 };
 
-export default function LoadingIndicator() {
-  return <LdngIndicator />;
+export default function LoadingIndicator({ state, setmyState }) {
+  return (
+    <>
+      <button onClick={() => setmyState(!state)}>click</button>
+      <LdngIndicator />
+    </>
+  );
 }

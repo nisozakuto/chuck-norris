@@ -8,8 +8,15 @@ export default class App extends Component {
     super();
     this.state = {
       randomResponse: "",
+      myState: false,
     };
   }
+
+  setmyState = () => {
+    this.setState((prevState) => ({
+      myState: !prevState.myState,
+    }));
+  };
 
   componentDidMount() {
     document.addEventListener("keydown", this.nextFunction, false);
@@ -68,7 +75,15 @@ export default class App extends Component {
         {/* <Loader promiseTracker={usePromiseTracker} /> */}
         <main>
           {<LoadingIndicator /> ? <p>True</p> : <p>false</p>}
-          {<LoadingIndicator /> ? (
+          {
+            <LoadingIndicator
+              setmyState={this.setmyState}
+              state={this.state.myState}
+            />
+          }
+          {/* {<span> {`state: ${this.state.myState}`} <span/>} */}
+
+          {/* {<LoadingIndicator /> ? (
             <LoadingIndicator />
           ) : (
             [
@@ -78,7 +93,7 @@ export default class App extends Component {
                 <p>Let's Go!</p>
               ),
             ]
-          )}
+          )} */}
         </main>
       </div>
     );
