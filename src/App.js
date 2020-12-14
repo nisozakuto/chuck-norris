@@ -71,29 +71,16 @@ export default class App extends Component {
           <label>Get a new joke</label>
           <input type="submit" value="Go!"></input>
         </form>
-
-        {/* <Loader promiseTracker={usePromiseTracker} /> */}
         <main>
-          {<LoadingIndicator /> ? <p>True</p> : <p>false</p>}
-          {
-            <LoadingIndicator
-              setmyState={this.setmyState}
-              state={this.state.myState}
-            />
-          }
-          {/* {<span> {`state: ${this.state.myState}`} <span/>} */}
-
-          {/* {<LoadingIndicator /> ? (
-            <LoadingIndicator />
+          <LoadingIndicator
+            setmyState={this.setmyState}
+            state={this.state.myState}
+          />
+          {this.state.randomResponse ? (
+            <p>{this.state.randomResponse.value}</p>
           ) : (
-            [
-              this.state.randomResponse ? (
-                <p>{this.state.randomResponse.value}</p>
-              ) : (
-                <p>Let's Go!</p>
-              ),
-            ]
-          )} */}
+            "Start to get the jokes"
+          )}
         </main>
       </div>
     );
