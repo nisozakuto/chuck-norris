@@ -66,12 +66,13 @@ export default class App extends Component {
   render() {
     return (
       <div className="wrapper">
-        <h1>Chuck Norris Jokes</h1>
-        <form className="jokesForm" onSubmit={this.handleSubmit}>
-          <label>Get a new joke</label>
-          <input type="submit" value="Go!"></input>
-        </form>
         <main>
+          <h1>Chuck Norris Jokes</h1>
+          <form className="jokesForm" onSubmit={this.handleSubmit}>
+            <label>Get a new joke</label>
+            <input type="submit" value="Go!"></input>
+          </form>
+
           <LoadingIndicator
             setmyState={this.setmyState}
             state={this.state.myState}

@@ -18,14 +18,13 @@ main{
 }
 
 main p{
-  background-color: rgb(240,	240,	248	);
-  width: 700px;
-  height: 100px;
+  background-color: rgba(240,	240,	248,.4	);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 50px;
 }
 
 .jokesForm{
@@ -35,10 +34,13 @@ main p{
 }
 
 .sweet-loading{
-  background-color: rgba(0, 0, 0, 0.142);
-  min-height: 100vh;
-  min-width: 100vw;
+  background-color: rgba(0, 0, 0, 0.35);
   display: flex;
   justify-content: center;
   flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
