@@ -1,3 +1,21 @@
+body{
+  background: url();
+}
+
+
+body::after {
+  content: "";
+  background: url("https://texashighways.com/wp-content/uploads/2019/01/CN_Vid_Set-02.jpg");
+  background-size: cover;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
 .wrapper{
   display: flex;
   flex-direction: column;
