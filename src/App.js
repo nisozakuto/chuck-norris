@@ -79,7 +79,7 @@ export default class App extends Component {
           {this.state.randomResponse ? (
             <p>{this.state.randomResponse.value}</p>
           ) : (
-            "Start to get the jokes"
+            "Your joke will appear here"
           )}
         </main>
       </div>
