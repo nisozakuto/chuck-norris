@@ -10,7 +10,7 @@ const LdngIndicator = (props) => {
 export default function LoadingIndicator({ state, setmyState }) {
   return (
     <>
-      {/* <button onClick={() => setmyState(!state)}>click</button> */}
+      <button onClick={() => setmyState(!state)}>click</button>
       <LdngIndicator />
     </>
   );
